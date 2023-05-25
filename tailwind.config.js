@@ -1,11 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./components/**/*.{js,ts,jsx,tsx,mdx}',
-		'./app/**/*.{js,ts,jsx,tsx,mdx}',
-	],
-	theme: {
-		extend: {},
-	},
-	plugins: [],
-};
+  content: [
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            figcaption: {
+              textAlign: "center",
+            },
+          },
+        },
+      },
+    },
+  },
+  plugins: [require("@tailwindcss/typography")],
+}
