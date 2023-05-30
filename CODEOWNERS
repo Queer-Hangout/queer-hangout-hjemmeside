@@ -1,3 +1,5 @@
 * @queer-hangout/utviklere
 
-content/* @queer-hangout/redaktorer
+content/pages/* @queer-hangout/redaktorer
+
+content/images/* @queer-hangout/redaktorer @queer-hangout/utviklere
