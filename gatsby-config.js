@@ -65,7 +65,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/images/qh-logo.png`,
+        icon: `content/images/Logo_QH_svg.svg`,
       },
     },
   ],

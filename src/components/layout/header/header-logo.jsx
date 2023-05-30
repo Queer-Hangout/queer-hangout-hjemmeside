@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const LogoImage = () => (
   <StaticImage
     className="sm:h-16 sm:w-16 h-12 w-12 rounded-full my-auto"
-    src="../../../../content/images/qh-logo.png"
+    src="../../../../content/images/Logo_QH_svg.svg"
     alt="blablabla"
   />
 )
