@@ -1,99 +1,95 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+# Queer Hangouts hjemmeside
+
+Denne hjemmesiden skal fungere som et samlested for offentlig informasjon knyttet til Queer Hangout i Drammen.
+
+I dette dokumentet finner du nødvendig informasjon for både innholdsredaktører og utviklere. Les gjerne punktet om [personvern og sikkerhet](#personvern-og-sikkerhet) før du begynner.
+
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+  <img src="./content/images/Logo_QH_svg.svg" title="Queer Hangout logo" alt="Ypsilon bridge with rainbow colors" width="50%" height="auto">
 </p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+## Personvern og sikkerhet
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+Vær oppmerksom på at alt som publiseres på denne nettsiden er **offentlig informasjon**. Dette gjelder både innholdet som publiseres på nettsiden, men også selve koden.
 
-## 🚀 Quick start
+Det må derfor aldri lagres sensitiv informasjon eller passord i dette Github-repoet. Dersom du har behov for lagring av sensitiv data og trenger bistand med dette, ta kontakt med Levi.
 
-1.  **Create a Gatsby site.**
+---
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
+## For innholdsredaktører
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+I denne nettsiden holder vi kode og innhold adskilt, slik at alle kan redigere nettsidens innhold uten å måtte kunne kode.
 
-1.  **Start developing.**
+### Hvordan opprette ny side
 
-    Navigate into your new site’s directory and start it up.
+Skal du opprette en ny underside på nettsiden gjør du dette ved å lage en `.mdx` (Markdown) fil i mappen `/content/pages`.
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+For eksempel, skal du lage en ny underside med tittelen **Om oss**, lager du en ny fil med filnavnet `/content/pages/om-oss.mdx`.
 
-1.  **Open the source code and start editing!**
+Filen må ha følgende struktur. **Det er viktig at frontmatter (alt mellom de tre bindestrekene helt øverst) skrives på dette formatet.**
 
-    Your site is now running at `http://localhost:8000`!
+For å gjøre det enklere for deg selv kan du ta utgangspunkt i malen som ligger i `/templates/page.mdx`. Her ligger også forklaring på hva de forskjellige feltene er.
 
-    Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries).
+```
+---
+title: Om oss
+description: En beskrivelse av siden på mindre enn 150 tegn
+slug: /om-oss
+menu: 1
+---
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+# Om oss
 
-## 🚀 Quick start (Netlify)
+Queer Hangout er en sosial møteplass for voksne bosatt i Drammen og omegn.
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+## Hvor møtes vi?
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Vi møtes 2 ganger i måneden, enten på Criollo eller Strømsø knutepunkt.
 
-## 🧐 What's inside?
+```
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
+### Frontmatter
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
+**Frontmatter** er den delen av en `.mdx` fil som befinner seg helt øverst, med tre bindestreker (`---`) over og under. Frontmatter brukes til å lagre metadata om siden. Denne metadataen brukes til å generere kode for den ferdige nettsiden.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+#### Felter
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+For denne nettsiden har vi 4 obligatoriske felter som må fylles ut for hver nettside. Disse står forklart under.
 
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+- **title**: Tittelen til siden. Denne tittelen vil vises i menyen øverst på siden, på fanen i nettleseren, og i treff på søkemotorer.
 
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+- **description**: En kort beskrivelse av innholdet til siden. Denne beskrivelsen vil vises i treff på søkemotorer. **OBS - Må være under 150 tegn**.
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
+- **slug**: En adresse til siden. F.eks. hvis nettsiden har domenet `https://queerhangout.no`, og `slug` settes til å være `/om-oss`, så vil nettsideadressen til siden være `https://queerhangout.no/om-oss`. **OBS - Må starte med `/`, og kun inneholde tegn som er gyldige i en URL**
 
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- **menu**: Hvorvidt siden skal vises i menyen, og i så fall hvilken sortering den skal ha. Dersom `menu` settes til `-1` vil ikke siden være synlig i menyen. Alle sider med `menu` satt til et positivt tall vil sorteres og vises i stigende rekkefølge i menyen. **OBS - Må være et positivt heltall eller `-1`**
 
-1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+---
 
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+## For utviklere
 
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+Denne nettsiden er skrevet i **Gatsby.js**, som er et rammeverk basert på **React**. Til styling brukes **Tailwindcss** og **Material Tailwind**.
 
-1.  **`README.md`**: A text file containing useful reference information about your project.
+Hele nettsiden er statisk generert ved bygg, og hostes via **Vercel** sitt CDN.
 
-## 🎓 Learning Gatsby
+### Kjøre prosjektet lokalt
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+#### Krav
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+For å kjøre prosjektet trenger du å ha **Node.js** og **npm** installert lokalt på din maskin.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+#### Installer
 
-## 💫 Deploy
+- Installer avhengigheter med kommando `npm ci`
 
-[Build, Deploy, and Host On Netlify](https://netlify.com)
+#### Kjør utviklingsserver
 
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
+- Kjør utviklingsserver med hot reload med kommando `npm run develop`.
+- Åpne nettleseren din på `http://localhost:8000`
+- Graphql playground er tilgjengelig på `http://localhost:8000/__qraphql`
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+#### Kjør produksjonsbygg lokalt
+
+- Bygg nettsiden med `npm run build`
+- Server den ferdigbyggede statiske siden med `npm run serve`
+- Åpne nettleseren din på `http://localhost:9000`. **OBS** statisk produksjonsbygg vil ikke oppdatere seg ved kodeendringer.
