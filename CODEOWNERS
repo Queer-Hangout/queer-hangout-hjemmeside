@@ -1,5 +1,7 @@
 * @queer-hangout/utviklere
 
+CODEOWNERS @leevi978
+
 content/pages/* @queer-hangout/redaktorer
 
 content/images/* @queer-hangout/redaktorer @queer-hangout/utviklere
