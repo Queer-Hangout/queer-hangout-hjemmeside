@@ -1,7 +1,7 @@
 import React from "react"
 import FooterSocial from "./footer-social"
 
-const email = "blablabla@gmail.com"
+const email = "queerhangout@posteo.no"
 
 export default function Footer() {
   let i = 0
@@ -15,11 +15,11 @@ export default function Footer() {
             {email}
           </a>,
         ],
-        "Vipps: 123456",
-        "Kontonr: 12345678910",
-        "Org.nr. 123456789",
+        "Vipps: 818416",
+        "Kontonr: 1506.92.76013",
+        "Org.nr. 931581686",
         "Webansvarlig: Levi Sørum",
-        "Queer Hangout i Drammen © 2023",
+        "Queer Hangout © 2023",
       ].map(item => (
         <p key={i++} className="my-3">
           {item}
