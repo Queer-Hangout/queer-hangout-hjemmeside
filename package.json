@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@material-tailwind/react": "^2.0.1",
+    "@material-tailwind/react": "^2.0.4",
     "@mdx-js/react": "^2.3.0",
     "@tailwindcss/typography": "^0.5.9",
     "gatsby": "^5.10.0",
@@ -15,7 +15,7 @@
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
-    "gatsby-remark-images": "^7.10.0",
+    "gatsby-remark-images": "^7.11.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-sharp": "^5.10.0",
     "react": "^18.2.0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "gatsby-plugin-postcss": "^6.10.0",
+    "gatsby-plugin-postcss": "^6.11.0",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.2"
