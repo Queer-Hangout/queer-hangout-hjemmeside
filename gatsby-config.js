@@ -3,6 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV || "production"}`,
+})
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -66,6 +69,17 @@ module.exports = {
         background_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/images/Logo_QH_svg.svg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GATSBY_GOOGLE_GTAG,
+          // Setting this parameter is optional
+          anonymize: true,
+          cookieName: "gatsby-gdpr-google-analytics",
+        },
       },
     },
   ],
