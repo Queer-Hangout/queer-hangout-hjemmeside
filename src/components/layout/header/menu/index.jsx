@@ -6,7 +6,10 @@ import MobileMenu from "./mobile-menu"
 export default function Menu() {
   const data = useStaticQuery(graphql`
     query MenuQuery {
-      pages: allMdx {
+      pages: allMdx(
+        filter: { frontmatter: { menu: { gte: 0 } } }
+        sort: { frontmatter: { menu: ASC } }
+      ) {
         edges {
           node {
             frontmatter {
@@ -19,10 +22,7 @@ export default function Menu() {
       }
     }
   `)
-  const pages = data.pages.edges
-    .map(({ node }) => node.frontmatter)
-    .sort((a, b) => (a.menu > b.menu && b.menu !== -1 ? 1 : -1))
-    .filter(item => item.menu !== -1)
+  const pages = data.pages.edges.map(({ node }) => node.frontmatter)
   return (
     <div className="flex text-lg">
       <DesktopMenu pages={pages}></DesktopMenu>
