@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@material-tailwind/react": "^2.0.4",
+    "@material-tailwind/react": "^2.0.5",
     "@mdx-js/react": "^2.3.0",
     "@tailwindcss/typography": "^0.5.9",
     "gatsby": "^5.10.0",
