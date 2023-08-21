@@ -2,7 +2,7 @@ import React from "react"
 import FooterSocial from "./footer-social"
 import FooterLink from "./footer-link"
 
-const email = "queerhangout@posteo.no"
+const email = "post@queerhangout.no"
 
 export default function Footer() {
   let i = 0
