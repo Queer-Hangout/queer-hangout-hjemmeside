@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Levi Sørum <levi.sorum@gmail.com>",
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.1.1",
     "@mdx-js/react": "^2.3.0",
     "@tailwindcss/typography": "^0.5.10",
