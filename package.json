@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "prettier": "^3.0.3"
+    "prettier": "^3.2.2"
   },
   "keywords": [
     "gatsby"
