@@ -11,7 +11,7 @@
     "@tailwindcss/typography": "^0.5.12",
     "gatsby": "^5.13.3",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
-    "gatsby-plugin-image": "^3.12.3",
+    "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-postcss": "^6.13.1",
