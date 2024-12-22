@@ -8,7 +8,33 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-patch"]
+      interval: "daily"
+    groups:
+      core:
+        patterns:
+          - "react*"
+          - "@types/react*"
+          - "@types/node"
+          - "typescript"
+          - "server-only"
+      next:
+        patterns:
+          - "*next*"
+      sanity:
+        patterns:
+          - "*sanity*"
+      mui:
+        patterns:
+          - "*mui*"
+          - "*emotion*"
+      eslint:
+        patterns:
+          - "*eslint*"
+      styling:
+        patterns:
+          - "*css*"
+          - "autoprefixer"
+          - "*styled*"
+      default:
+        patterns:
+          - "*"
