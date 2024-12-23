@@ -7,9 +7,9 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@material-tailwind/react": "^2.1.10",
-    "@mdx-js/react": "^2.3.0",
+    "@mdx-js/react": "^3.1.0",
     "@tailwindcss/typography": "^0.5.15",
-    "gatsby": "^5.13.3",
+    "gatsby": "^5.14.1",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
