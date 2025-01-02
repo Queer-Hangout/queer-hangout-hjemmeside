@@ -1,5 +1,6 @@
 import { Language } from "@/types/language";
 import { ReactNode } from "react";
+import LayoutComponent from "@/components/layout";
 
 export default async function Layout({
   params,
@@ -8,5 +9,6 @@ export default async function Layout({
   params: Promise<{ language: Language }>;
   children: ReactNode | ReactNode[];
 }) {
-  return <div>{children}</div>;
+  const { language } = await params;
+  return <LayoutComponent language={language}>{children}</LayoutComponent>;
 }

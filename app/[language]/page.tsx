@@ -10,7 +10,6 @@ export default async function Page({
   const { default: PageContent, frontmatter } = await import(
     `@/content/pages/${language}/index.mdx`
   );
-  console.log(frontmatter);
   return <PageContent />;
 }
 
