@@ -13,10 +13,10 @@
         @apply text-3xl font-normal leading-[5.6rem];
       }
       h2 {
-        @apply text-xl font-normal leading-[3.6rem];
+        @apply text-xl font-normal leading-[4.2rem] mt-3;
       }
       h3 {
-        @apply text-lg font-normal leading-[3.2rem];
+        @apply text-lg font-normal leading-[3.2rem] mt-2;
       }
       h4 {
         @apply font-normal leading-[2.4rem];
@@ -37,6 +37,9 @@
       }
       a {
         @apply underline text-cyan-800 font-normal;
+      }
+      p {
+        @apply mb-3;
       }
     }
   }

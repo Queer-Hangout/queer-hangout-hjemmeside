@@ -1,9 +1,7 @@
 import Image, { ImageProps } from "next/image";
 
 export default async function MdxImage(props: ImageProps) {
-  console.log(props);
   const { src, title, alt } = props;
-  console.log(src);
   return (
     <Image
       sizes="1024px, 800px, 420px"
