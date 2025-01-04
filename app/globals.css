@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  main {
+    @apply gap-4 py-12;
+    * {
+      @apply text-base font-light leading-8;
+    }
+    h1 {
+      @apply text-3xl font-normal leading-[3.6rem];
+    }
+    h2 {
+      @apply text-2xl font-normal;
+    }
+    h3 {
+      @apply text-xl font-normal;
+    }
+    b,
+    strong {
+      @apply font-semibold;
+    }
+    ul,
+    ol {
+      @apply list-outside;
+    }
+    a {
+      @apply underline text-cyan-800 font-normal;
+    }
+  }
+}
