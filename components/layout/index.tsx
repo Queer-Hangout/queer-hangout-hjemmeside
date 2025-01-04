@@ -42,7 +42,9 @@ export default async function LayoutComponent({
         <Menu language={language} />
       </header>
       <main className="flex flex-col flex-grow w-full bg-white text-black px-3 sm:px-6">
-        <div className="flex flex-col max-w-[1024px] mx-auto">{children}</div>
+        <div className="flex flex-col max-w-[1024px] mx-auto mdx-content">
+          {children}
+        </div>
       </main>
       <Footer language={language} />
     </div>

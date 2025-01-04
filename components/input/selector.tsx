@@ -99,7 +99,9 @@ export default function Selector<T>(props: SelectorProps<T>) {
                 id={index}
                 key={option.label}
                 textValue={option.label}
-                className={`py-2 px-4 w-full ${props?.classes?.option || ""}`}
+                className={`py-2 px-4 w-full cursor-pointer ${
+                  props?.classes?.option || ""
+                }`}
               >
                 {option.label}
               </ListBoxItem>

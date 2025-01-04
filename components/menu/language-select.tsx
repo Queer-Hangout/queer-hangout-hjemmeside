@@ -19,7 +19,6 @@ export default function LanguageSelect({ language }: { language: Language }) {
       }
       aria-label={
         {
-          se: "Giella",
           no: "Språk",
           en: "Language",
         }[language]
@@ -28,7 +27,6 @@ export default function LanguageSelect({ language }: { language: Language }) {
       onSelect={(event) =>
         router.push(
           {
-            se: "/se",
             no: "/no",
             en: "/en",
           }[event.value]
