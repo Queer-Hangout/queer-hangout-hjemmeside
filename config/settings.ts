@@ -10,3 +10,10 @@ export const footer: Footer = {
   facebook: "https://facebook.com/queerhangout",
   instagram: "https://instagram.com/queerhangout_drammen",
 };
+
+export const analytics = {
+  privacyPolicySlug: {
+    no: "personvern",
+    en: "privacy-policy",
+  },
+};

@@ -1,6 +1,7 @@
 import { Language } from "@/types/language";
 import { ReactNode } from "react";
 import LayoutComponent from "@/components/layout";
+import Analytics from "@/components/analytics";
 
 export default async function Layout({
   params,
@@ -10,5 +11,10 @@ export default async function Layout({
   children: ReactNode | ReactNode[];
 }) {
   const { language } = await params;
-  return <LayoutComponent language={language}>{children}</LayoutComponent>;
+  return (
+    <LayoutComponent language={language}>
+      <Analytics language={language} />
+      {children}
+    </LayoutComponent>
+  );
 }
