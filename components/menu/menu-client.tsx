@@ -22,7 +22,7 @@ export default function Menu({
     setIsOpen(false);
   }, [pathname]);
 
-  function handleChange(e: any) {
+  function handleChange() {
     setIsOpen((isOpen) => !isOpen);
   }
 

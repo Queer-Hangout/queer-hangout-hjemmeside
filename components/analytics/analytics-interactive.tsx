@@ -21,7 +21,7 @@ export default function AnalyticsInteractive(props: AnalyticsProps) {
   useEffect(() => {
     if (props.initialDeleteCookies === true)
       deleteGACookies(props.consentCookieName);
-  }, [props.initialDeleteCookies]);
+  }, [props.initialDeleteCookies, props.consentCookieName]);
 
   function onResponse(response: boolean) {
     setCookie(props.consentCookieName, response ? "true" : "false", {
