@@ -2,11 +2,17 @@
 
 import Selector from "@/components/input/selector";
 import { languages, languageNames } from "@/config/languages";
-import { Language } from "@/types/language";
+import { Language, Translated } from "@/types/language";
 import { MdOutlineLanguage } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
-export default function LanguageSelect({ language }: { language: Language }) {
+export default function LanguageSelect({
+  language,
+  routes,
+}: {
+  language: Language;
+  routes?: Translated<string>;
+}) {
   const router = useRouter();
   return (
     <Selector<Language>
@@ -26,10 +32,12 @@ export default function LanguageSelect({ language }: { language: Language }) {
       defaultValue={language}
       onSelect={(event) =>
         router.push(
-          {
-            no: "/no",
-            en: "/en",
-          }[event.value]
+          (routes
+            ? routes
+            : {
+                no: "/no",
+                en: "/en",
+              })[event.value]
         )
       }
       options={languages.map((language) => {

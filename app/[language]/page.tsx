@@ -1,6 +1,6 @@
+import LayoutComponent from "@/components/layout";
 import { languages } from "@/config/languages";
 import { Language } from "@/types/language";
-import { Metadata } from "next";
 
 export default async function Page({
   params,
@@ -8,10 +8,14 @@ export default async function Page({
   params: Promise<{ language: Language }>;
 }) {
   const { language } = await params;
-  const { default: PageContent, frontmatter } = await import(
+  const { default: PageContent } = await import(
     `@/content/pages/${language}/index.mdx`
   );
-  return <PageContent />;
+  return (
+    <LayoutComponent language={language}>
+      <PageContent />
+    </LayoutComponent>
+  );
 }
 
 export function generateStaticParams() {

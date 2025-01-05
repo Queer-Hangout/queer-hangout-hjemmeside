@@ -15,10 +15,10 @@ export default async function Layout({
 }) {
   const { language } = await params;
   return (
-    <LayoutComponent language={language}>
+    <>
       <Analytics language={language} />
       {children}
-    </LayoutComponent>
+    </>
   );
 }
 
