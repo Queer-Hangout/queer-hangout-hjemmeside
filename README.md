@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Queer Hangouts hjemmeside
 
-## Getting Started
+Denne hjemmesiden skal fungere som et samlested for offentlig informasjon knyttet til Queer Hangout i Drammen.
 
-First, run the development server:
+<p align="center">
+  <img src="./public/images/Logo_QH_svg.svg" title="Queer Hangout logo" alt="Ypsilon bridge with rainbow colors" width="50%" height="auto">
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Denne nettsiden er skrevet i **Next.js**, som er et rammeverk basert på **React**. Til styling brukes **Tailwindcss**. Hele nettsiden hostes via **Vercel** sitt CDN.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Personvern og sikkerhet
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Vær oppmerksom på at alt som publiseres på denne nettsiden er **offentlig informasjon**. Dette gjelder både innholdet som publiseres på nettsiden, men også selve koden.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Det må derfor aldri lagres sensitiv informasjon eller passord i dette Github-repoet. Dersom du har behov for lagring av sensitiv data og trenger bistand med dette, ta kontakt med Levi.
 
-## Learn More
+## Hvordan bidra
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Sørg for at du har en konto på [Github](https://github.com).
+2. Be om å bli lagt til i [Queer Hangouts Github organisasjon](https://github.com/Queer-Hangout) i følgende team:
+   - **Redaktører** om du kun vil endre nettsidens innhold
+   - **Utviklere** om du vil endre på kildekoden
+3. [Sett opp lokalt utvilkingsmiljø](docs/localdev.md).
+4. For hjelp til å komme i gang med Git, les vår [git dokumentasjon](docs/git.md).
+5. Skal du endre nettsideinnhold, les [dokumentasjon for innholdsredaktører](docs/content.md).
