@@ -1,6 +1,5 @@
 import LayoutComponent from "@/components/layout";
-import { languages } from "@/config/languages";
-import { loadPageMdx } from "@/helpers/content-helper";
+import { getMetadata } from "@/helpers/metadata-helper";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
 import { ReactNode } from "react";
@@ -26,27 +25,5 @@ export async function generateMetadata({
   params: Promise<{ language: Language; slug: string }>;
 }): Promise<Metadata> {
   const { language, slug } = await params;
-  const { frontmatter } = await loadPageMdx(language, slug);
-  return {
-    title: frontmatter.title,
-    description: frontmatter.description,
-    openGraph: {
-      url: `/${language}/${slug}`,
-    },
-    alternates: {
-      canonical: `/${language}/${slug}`,
-      languages: Object.fromEntries(
-        languages.map((lang) => [
-          lang,
-          `/${lang}/${lang === language ? slug : frontmatter[lang] || ""}`,
-        ])
-      ),
-    },
-    robots: {
-      index: frontmatter.disableRobots === true ? false : true,
-      googleBot: {
-        index: frontmatter.disableRobots === true ? false : true,
-      },
-    },
-  };
+  return getMetadata(language, slug);
 }

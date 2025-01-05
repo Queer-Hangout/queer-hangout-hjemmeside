@@ -47,8 +47,6 @@ export async function generateMetadata(): Promise<Metadata> {
     applicationName: "Queer Hangout",
     generator: "Next.js",
     referrer: "origin-when-cross-origin",
-    creator: "Levi Sørum",
-    publisher: "Levi Sørum",
     verification: {
       google: "google",
       yahoo: "yahoo",
