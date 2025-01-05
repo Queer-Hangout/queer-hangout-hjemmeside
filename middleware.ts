@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { defaultLanguage } from "./config/languages";
+import { defaultLanguage, languages } from "@/config/languages";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -10,10 +10,19 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${defaultLanguage}`, request.url));
   }
 
-  // Allow other routes to proceed as normal
-  return NextResponse.next();
+  // Create a response object that continues the request
+  const response = NextResponse.next();
+
+  // Set a custom header for the detected language
+  response.headers.set(
+    "x-detected-language",
+    languages.find((lang) => pathname.startsWith(`/${lang}/`)) ||
+      defaultLanguage
+  );
+
+  return response;
 }
 
 export const config = {
-  matcher: "/", // Apply only to the root route
+  matcher: ["/", "/((?!_next/static|_next/image|favicon.ico).*)"], // Apply to root and other paths
 };
