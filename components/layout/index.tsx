@@ -41,8 +41,8 @@ export default async function LayoutComponent({
         </nav>
         <Menu language={language} />
       </header>
-      <main className="flex flex-col flex-grow w-full bg-white text-black px-3 sm:px-6">
-        <div className="flex flex-col max-w-[1024px] mx-auto mdx-content">
+      <main className="flex flex-col flex-grow w-full bg-white text-black px-3 sm:px-0">
+        <div className="flex flex-col max-w-[920px] mx-auto mdx-content">
           {children}
         </div>
       </main>

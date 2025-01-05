@@ -21,7 +21,7 @@ export default function EventsBrowserInteractive({
   let i = 0;
 
   return (
-    <div className="not-prose flex flex-col justify-center items-center mx-auto gap-6 w-full max-w-[1024px]">
+    <div className="events-browser not-prose flex flex-col justify-center items-center mx-auto gap-6 w-full max-w-[920px]">
       <div className="border-2 w-full">
         {loading ? (
           <span>Loading...</span>

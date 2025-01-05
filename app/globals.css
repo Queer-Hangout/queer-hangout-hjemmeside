@@ -5,18 +5,18 @@
 @layer base {
   main {
     .mdx-content {
-      @apply pt-6 pb-12;
+      @apply pt-12 pb-24;
       * {
         @apply text-base font-light leading-8;
       }
       h1 {
-        @apply text-3xl font-normal leading-[5.6rem];
+        @apply text-4xl font-normal leading-[6.4rem];
       }
       h2 {
-        @apply text-xl font-normal leading-[4.2rem] mt-3;
+        @apply text-2xl font-normal leading-[4rem];
       }
       h3 {
-        @apply text-lg font-normal leading-[3.2rem] mt-2;
+        @apply text-xl font-normal leading-[3.8rem];
       }
       h4 {
         @apply font-normal leading-[2.4rem];

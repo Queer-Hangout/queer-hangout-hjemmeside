@@ -6,8 +6,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 
 export default function Footer({ language }: { language: Language }) {
   return (
-    <footer className="flex text-white bg-slate-800 py-12 px-3 sm:px-6 text-sm text-center w-full">
-      <div className="flex flex-col sm:flex-row justify-between w-full max-w-[1024px] mx-auto gap-y-4">
+    <footer className="flex text-white bg-slate-800 py-20 px-3 sm:px-6 text-sm text-center w-full">
+      <div className="flex flex-col sm:flex-row justify-between w-full gap-y-4 max-w-[920px] mx-auto">
         <div className="flex flex-col gap-4">
           <p>
             <b>Queer Hangout © 2025</b>
