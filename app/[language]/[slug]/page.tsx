@@ -17,12 +17,14 @@ export default async function Page({
 
 export async function generateStaticParams() {
   return languages.flatMap((language) =>
-    getSlugs(language).map((slug) => {
-      return {
-        language,
-        slug,
-      };
-    })
+    getSlugs(language)
+      .filter((slug) => slug !== "index")
+      .map((slug) => {
+        return {
+          language,
+          slug,
+        };
+      })
   );
 }
 
