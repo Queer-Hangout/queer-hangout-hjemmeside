@@ -1,5 +1,6 @@
 import { languages } from "@/config/languages";
 import { Language } from "@/types/language";
+import { Metadata } from "next";
 
 export default async function Page({
   params,

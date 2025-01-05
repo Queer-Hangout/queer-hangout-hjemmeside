@@ -23,12 +23,15 @@ Hver `.mdx` fil har noe som kalles frontmatter, som er metadata som legges inn �
 title: Om oss
 description: Queer Hangout er en møteplass for voksne skeive i Drammen.
 menu: 1
+disableRobots: false
 ---
 ```
 
 - **title** - (Obligatorisk) Tittelen til siden. Denne tittelen vil vises i menyen øverst på siden, på fanen i nettleseren, og i treff på søkemotorer.
 - **description** - (Obligatorisk) En kort beskrivelse av innholdet til siden. Denne beskrivelsen vil vises i treff på søkemotorer. **OBS - Må være under 150 tegn**.
+- **no/en** - (Obligatorisk) Alle norske dokumenter må ha et `en` felt som peker på den engelske versjonen av dokumentet. Alle engelske dokumenter må ha et `no` felt som peker på det norske. Bruk navnet til markdown filen, med kutt ut `.mdx` endingen.
 - **menu** - Sorteringsnøkkel for hvor siden havner i menyen, hvor lavere tall kommer øverst. Utelates den så blir ikke siden tilgjengelig i hovedmenyen.
+- **disableRobots** - Hvorvidt søkemotorer skal la være å indeksere siden. Settes til false om ingen verdi er oppgitt.
 
 ### Eksempel
 
@@ -38,6 +41,7 @@ menu: 1
 ---
 title: Om oss
 description: En beskrivelse av siden på mindre enn 150 tegn
+en: about-us
 menu: 1
 ---
 
