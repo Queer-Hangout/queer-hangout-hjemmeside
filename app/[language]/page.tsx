@@ -1,4 +1,3 @@
-import Analytics from "@/components/analytics";
 import LayoutComponent from "@/components/layout";
 import { languages } from "@/config/languages";
 import { Language } from "@/types/language";
@@ -14,7 +13,6 @@ export default async function Page({
   );
   return (
     <LayoutComponent language={language}>
-      <Analytics language={language} />
       <PageContent />
     </LayoutComponent>
   );
