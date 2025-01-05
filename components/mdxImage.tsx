@@ -11,7 +11,7 @@ export default async function MdxImage(props: ImageProps) {
       alt={alt}
       title={title}
       quality={60}
-      className="my-6"
+      className="my-3"
     />
   );
 }
