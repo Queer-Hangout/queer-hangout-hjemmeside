@@ -3,13 +3,20 @@ import fs from "node:fs";
 import path from "node:path";
 import { MenuItem, PageMdx } from "@/types/content";
 import { languages } from "@/config/languages";
-import { fetchGitCommits } from "@/helpers/git-helper";
+import { fetchGitCommits, listGitHubMdxFiles } from "@/helpers/git-helper";
 
-export const getMdxFiles = (language: Language) =>
-  fs.readdirSync(path.join("content", "pages", language));
+export const getMdxFiles = async (language: Language) => {
+  const isVercel = Boolean(process.env.VERCEL);
+  const directory = path.join("content", "pages", language);
+  if (isVercel) return await listGitHubMdxFiles(directory);
+  else return fs.readdirSync(directory);
+};
 
-export const getSlugs = (language: Language) =>
-  getMdxFiles(language).map((filename) => filename.replace(".mdx", ""));
+export const getSlugs = async (language: Language) => {
+  return (await getMdxFiles(language)).map((filename) =>
+    filename.replace(".mdx", "")
+  );
+};
 
 export const loadPageMdx = (language: Language, slug: string) =>
   import(`@/content/pages/${language}/${slug}.mdx`).catch((e: any) => {
@@ -22,7 +29,9 @@ export const loadMenuItems = async (language: Language) =>
   (
     (
       await Promise.all(
-        getSlugs(language).map((slug) =>
+        (
+          await getSlugs(language)
+        ).map((slug) =>
           loadPageMdx(language, slug).then((mdx) => {
             return {
               language,
