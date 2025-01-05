@@ -63,3 +63,42 @@ I motsetning til devserveren, som oppdaterer siden du ser på kontinuerlig, så 
 6. Åpne følgende URL i nettleseren din:
    - `http://localhost:3000`
 7. Påse at siden ser ut som ønsket, og at det ikke har kommet noen uønskede feil eller endringer.
+
+## Miljøvariabler
+
+Dette steget er valgfritt.
+
+Har du blitt lenket hit av en advarsel i konsollet, se lengre ned i dokumentet.
+
+Offentlige miljøvariabler er deklarert i filen `.env`, slik at det skal være minst mulig arbeid å komme i gang.
+Derfor er det viktig å aldri sette noe hemmelig i `.env` filen.
+
+Noen av nettsidens metadata funksjonaliteter fungerer best dersom du setter inn noen ekstra lokale miljøvariabler.
+
+1. Opprett en Github PAT ved å følge [Githubs dokumentasjon](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token). Bruk følgende innstillinger:
+   - Only select repositories -> queer-hangout-hjemmeside
+   - Repository permissions
+     - Commit statuses -> Read only
+     - Contents -> Read only
+2. Opprett en fil med navn `.env.local`. Denne vil kun ligge på din maskin, så innholdet her er hemmelig.
+3. Sett inn følgende miløvariabler i `.env.local`. Du kan se et eksempel lengre ned.
+   - **GITHUB_TOKEN** - Tokenet du nettopp lagde
+   - **GITHUB_BRANCH** - (Valgfritt) Dersom du skal teste generering av metadata lokalt, sett inn navnet på branchen du jobber i.
+
+```
+GITHUB_TOKEN=fewnagaeb32rn32tno23fowi
+GITHUB_BRANCH=main
+```
+
+### Hva betyr advarslene?
+
+```
+WARN: Failed to fetch Github metadata for file content/pages/en/index.mdx
+   GitHub API request failed with status 403: rate limit exceeded
+   Authenticate by setting GITHUB_TOKEN in .env.local
+   For more information, see docs at https://github.com/Queer-Hangout/queer-hangout-hjemmeside/docs/localdev.md#miljøvariabler
+```
+
+Har du fått en advarsel som denne, så betyr det at du ikke får lov til å hente flere metadata fra Github før du har logget inn. Det handler om at Github begrenser antall forespørsel fra anonyme brukere til 60 spørringer i timen.
+
+Dette er sannsynligvis noe du kan ignorere, for miljøvariablene som evt. mangler på din lokale maskin skal være satt i Vercel (produksjonsmiljøet). Men dersom du skal teste ut generering av metadata, eller du rett og slett synes advarslene er irriterende, så kan du følge guiden for å legge inn lokale miljøvariabler.

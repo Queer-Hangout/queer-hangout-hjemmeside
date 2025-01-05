@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { MenuItem, PageMdx } from "@/types/content";
 import { languages } from "@/config/languages";
+import { fetchGitCommits } from "@/helpers/git-helper";
 
 export const getMdxFiles = (language: Language) =>
   fs.readdirSync(path.join("content", "pages", language));
@@ -54,45 +55,6 @@ export const getAlternates = async (
       })
     )
   ) as Translated<string>;
-
-interface GitHubCommit {
-  commit: {
-    author: {
-      date: string;
-      name: string;
-    };
-    committer?: {
-      date: string;
-    };
-  };
-}
-
-async function fetchGitCommits(
-  fileRelativePath: string,
-  perPage?: number
-): Promise<GitHubCommit[] | null> {
-  const isVercel = Boolean(process.env.VERCEL);
-  const owner = isVercel
-    ? process.env.VERCEL_GIT_REPO_OWNER
-    : process.env.GITHUB_OWNER;
-  const repo = isVercel
-    ? process.env.VERCEL_GIT_REPO_SLUG
-    : process.env.GITHUB_REPO;
-  const branchName = process.env.VERCEL_GIT_COMMIT_REF || "main";
-
-  // Fetch from GitHub’s commits API
-  const url = `https://api.github.com/repos/${owner}/${repo}/commits?path=${fileRelativePath}&sha=${branchName}&per_page=${
-    perPage || 1
-  }`;
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    console.error(`GitHub API request failed with status ${res.status}`);
-    return null;
-  }
-
-  return (await res.json()) as GitHubCommit[];
-}
 
 export async function getLastModifiedTimestamp(
   language: Language,
