@@ -66,7 +66,7 @@ I motsetning til devserveren, som oppdaterer siden du ser på kontinuerlig, så 
 
 ## Miljøvariabler
 
-Dette steget er valgfritt.
+Dette steget er kun nødvendig dersom du skal jobbe med metadata.
 
 Har du blitt lenket hit av en advarsel i konsollet, se lengre ned i dokumentet.
 
@@ -84,10 +84,12 @@ Noen av nettsidens metadata funksjonaliteter fungerer best dersom du setter inn 
 3. Sett inn følgende miløvariabler i `.env.local`. Du kan se et eksempel lengre ned.
    - **GITHUB_TOKEN** - Tokenet du nettopp lagde
    - **GITHUB_BRANCH** - (Valgfritt) Dersom du skal teste generering av metadata lokalt, sett inn navnet på branchen du jobber i.
+   - **VERCEL** - (Valgfritt) Sett til 1 for å teste hvordan metadata generering oppfører seg i produksjon.
 
 ```
 GITHUB_TOKEN=fewnagaeb32rn32tno23fowi
 GITHUB_BRANCH=main
+VERCEL=1
 ```
 
 ### Hva betyr advarslene?
