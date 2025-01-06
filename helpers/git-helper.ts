@@ -1,5 +1,3 @@
-import { Language } from "@/types/language";
-
 const isVercel = Boolean(process.env.VERCEL);
 const owner = isVercel
   ? process.env.VERCEL_GIT_REPO_OWNER
@@ -85,6 +83,35 @@ export async function fetchGitCommits(
   }
 
   return (await res.json()) as GitHubCommit[];
+}
+
+export async function listMdxFilesOnGithub(
+  directory: string
+): Promise<string[]> {
+  return [];
+}
+
+export async function getLastModifiedOnGithub(filename: string) {
+  const commits = await fetchGitCommits(filename);
+  if (!Array.isArray(commits) || commits.length === 0) {
+    return null; // No commits found for that file
+  }
+  const lastModifiedString = commits[0].commit.author.date;
+  return new Date(lastModifiedString).toISOString();
+}
+
+export async function getAuthorsOfFileOnGithub(filename: string) {
+  const commits = await fetchGitCommits(filename, 100);
+  if (!Array.isArray(commits) || commits.length === 0) {
+    return []; // No commits found for that file
+  }
+  return Array.from(
+    new Set(
+      commits
+        .map((commit) => commit.commit.author.name)
+        .filter((name) => name != null)
+    )
+  );
 }
 
 export async function listGitHubMdxFiles(directory: string): Promise<string[]> {

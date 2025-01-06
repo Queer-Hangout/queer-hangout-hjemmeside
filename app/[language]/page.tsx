@@ -23,5 +23,3 @@ export function generateStaticParams() {
     return { language };
   });
 }
-
-export const dynamicParams = false;
